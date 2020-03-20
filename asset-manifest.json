@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/notes-app/static/css/main.5f361e03.chunk.css",
+    "main.js": "/notes-app/static/js/main.f53487d1.chunk.js",
+    "main.js.map": "/notes-app/static/js/main.f53487d1.chunk.js.map",
+    "runtime-main.js": "/notes-app/static/js/runtime-main.a718042d.js",
+    "runtime-main.js.map": "/notes-app/static/js/runtime-main.a718042d.js.map",
+    "static/js/2.b4ba0e95.chunk.js": "/notes-app/static/js/2.b4ba0e95.chunk.js",
+    "static/js/2.b4ba0e95.chunk.js.map": "/notes-app/static/js/2.b4ba0e95.chunk.js.map",
+    "index.html": "/notes-app/index.html",
+    "precache-manifest.fbd61d15e3f7109ecc84bc2f95f00e78.js": "/notes-app/precache-manifest.fbd61d15e3f7109ecc84bc2f95f00e78.js",
+    "service-worker.js": "/notes-app/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/notes-app/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.b4ba0e95.chunk.js.LICENSE.txt": "/notes-app/static/js/2.b4ba0e95.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/notes-app/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a718042d.js",
+    "static/js/2.b4ba0e95.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.f53487d1.chunk.js"
+  ]
+}
