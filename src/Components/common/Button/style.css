@@ -1,0 +1,28 @@
+.btn {
+    border: none;
+    padding: 10px 15px;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+ .btn:hover{
+    box-shadow: 2px 2px 6px 0 rgba(0,0,0,0.22);
+    cursor: pointer;
+}
+
+.btn.btn-new{
+    background: mediumaquamarine;
+}
+
+.btn.btn-danger{
+    background: tomato;
+}
+
+.btn.btn-success{
+    background: mediumseagreen;
+}
+
+.btn-group .form-group{ display: inline-block;}
+
+.btn-group .btn{margin: 0 5px}

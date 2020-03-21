@@ -1,0 +1,37 @@
+.add-note {
+    padding: 30px 0;
+    background: slategray;
+    color: #fff;
+    margin: 21px;
+    border-radius: 3px;
+}
+
+.add-note .form-group label{
+    display: block;
+    font-size: 18px;
+    font-family: monospace;
+}
+
+.add-note .form-group input{
+    width: 400px;
+    height: 60px;
+    padding: 5px;
+    box-shadow: 1px 1px 4px 0 #444;
+    border: none;
+    margin: 10px 0;
+    border-radius: 3px;
+}
+
+.add-note .form-group button {
+    border: none;
+    padding: 10px 15px;
+    background: mediumaquamarine;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.add-note .form-group button:hover{
+    box-shadow: 2px 2px 6px 0 rgba(0,0,0,0.22);
+    cursor: pointer;
+}
