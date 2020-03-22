@@ -58,10 +58,6 @@ class Notes extends Component{
                             {note.moreNotes.map( (subNote) => {
                                 return (<li className="note">
                                 <p><span>{subNote.id} : </span>{subNote.details}</p>
-                                <div className="btn-group">
-                                    <Button type="button" btnClass="btn btn-danger" clickHandler={() => this.deleteNote(subNote.id)}  value="Delete Note"/>
-                                    <Button type="button" btnClass="btn btn-success" value="Add Sub Note" clickHandler={() => this.addSubnote(subNote.id)} />
-                                </div>
                                 {this.state.showAddSubNote === subNote.id  && <AddNote id={subNote.id} />}
                                 </li>)
                             })}
