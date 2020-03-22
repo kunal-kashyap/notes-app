@@ -1,56 +1,36 @@
 {
   "notes": [
     {
-      "id": 1,
-      "details": "This a note about my car. I love it",
-      "moreNotes": [
-        {
-          "id": 1.1,
-          "details": "New note added under note 1"
-        },
-        {
-          "id": 1.2,
-          "details": "Another sub note added under note 1"
-        }
-      ]
-    },
-    {
       "id": 2,
       "details": "This a note another note about my car. I love it",
       "moreNotes": [
         {
           "id": 2.1,
-          "details": "This a note about my car. I love it"
+          "details": "It has 5 wheels. 4 on the ground, 1 in the boot ;)."
         },
         {
           "id": 2.2,
-          "details": "This a note about my car. I love it"
+          "details": "It's EMIs are killing me. But when I go for trips in it, seems like worth it. :)"
         }
       ]
     },
     {
       "id": 3,
-      "details": "This a note about my car. I love it"
-    },
-    {
-      "id": 4,
-      "details": "This a note about my car. I love it"
-    },
-    {
-      "id": 5,
-      "details": "This a note about my car. I love it"
-    },
-    {
-      "details": "A new note",
-      "id": 6,
+      "details": "I like to read books.",
       "moreNotes": [
         {
-          "id": 6.1,
-          "details": "This note will go under note 6"
-        },
+          "id": 3.1,
+          "details": "Maximum upto 3 chapters. Then, I move onto another book."
+        }
+      ]
+    },
+    {
+      "details": "I hate to watch movies or series.",
+      "id": 4,
+      "moreNotes": [
         {
-          "id": 6.2,
-          "details": ""
+          "id": 4.1,
+          "details": "Pivot! Pivot! Pivot!"
         }
       ]
     }

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import get from 'lodash/get';
 import { bindActionCreators } from 'redux';
@@ -12,7 +12,8 @@ import './style.css'
 class Notes extends Component{
 
     state = {
-        notes: []
+        notes: [],
+        showAddSubNote: 0,
     }
 
     componentDidMount(){
@@ -25,18 +26,48 @@ class Notes extends Component{
              .catch((err) => console.log('Error Occured: ', err))
     }
 
+    addSubnote = (id) => {
+        this.setState({showAddSubNote: id})
+    }
+
+    deleteNote = (id) => {
+        axios.delete(`/notes/${id}`)
+             .then((resp) => {
+                 if(resp.status === 200) {
+                     this.loadHandler()
+                 }
+             })
+             .catch((err) => console.log('Error Occured: ', err))
+    }
+
 
     render() {
         const {notesList} = this.props;
 
         const allNotes = notesList && notesList.map((note) => {
+            debugger
             return (
                 <li className="note">
-                    <p>{note.details}</p>
+                    <p><span>{note.id} : </span>{note.details}</p>
                     <div className="btn-group">
-                        <Button type="button" btnClass="btn btn-danger" value="Delete Note"/>
-                        <Button type="button" btnClass="btn btn-success" value="Add Sub Note"/>
+                        <Button type="button" btnClass="btn btn-danger" clickHandler={() => this.deleteNote(note.id)} value="Delete Note"/>
+                        <Button type="button" btnClass="btn btn-success" value="Add Sub Note" clickHandler={() => this.addSubnote(note.id)} />
                     </div>
+                    {note.moreNotes &&
+                        <div className="sub-notes">
+                            {note.moreNotes.map( (subNote) => {
+                                return (<li className="note">
+                                <p><span>{subNote.id} : </span>{subNote.details}</p>
+                                <div className="btn-group">
+                                    <Button type="button" btnClass="btn btn-danger" clickHandler={() => this.deleteNote(subNote.id)}  value="Delete Note"/>
+                                    <Button type="button" btnClass="btn btn-success" value="Add Sub Note" clickHandler={() => this.addSubnote(subNote.id)} />
+                                </div>
+                                {this.state.showAddSubNote === subNote.id  && <AddNote id={subNote.id} />}
+                                </li>)
+                            })}
+                        </div> 
+                    }
+                    {this.state.showAddSubNote === note.id  && <AddNote id={note.id} />}
                 </li>
             )
         })
@@ -45,7 +76,7 @@ class Notes extends Component{
             <div className="notes-app">
                 <h2> Notes App </h2>
 
-                <AddNote id={6} />
+                <AddNote reloadNotes={this.loadHandler} id={0} />
 
                 <div className="all-notes">
                     <ul>

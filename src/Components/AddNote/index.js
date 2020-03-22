@@ -26,7 +26,7 @@ class AddNote extends Component {
         }
         if(!id){
             axios.post('/notes',data)
-                 .then((resp) => resp.status===201 && console.log("Sucessful"))
+                 .then((resp) => resp.status===201 && this.props.reloadNotes())
                  .catch(err => console.log("Error occurred while posting a new note:", err))
             }
             else {
@@ -48,7 +48,7 @@ class AddNote extends Component {
                         }]
                     }
                 axios.patch(`/notes/${id}`, modifiedNote)
-                .then((resp) => resp.status===200 && console.log("Sub note added sucessfully !!"))
+                .then((resp) => resp.status===200 && this.props.reloadNotes())
                 .catch(err => console.log("Error occurred while posting a new sub note:", err))
             }
     }
@@ -60,7 +60,7 @@ class AddNote extends Component {
         return (
             <div className="add-note">
                 <Input type="text" name="newNote" value={newNote} label="Add a new Note" changeHandler={this.changeHandler} />
-                <Button type="button" btnClass="btn btn-new" clickHandler={() => this.saveForm(id)} value="Add Note"/>
+                <Button type="button" btnClass="btn btn-new" disabled={newNote.length===0} clickHandler={() => this.saveForm(id)} value="Add Note"/>
             </div>
         )
     }
